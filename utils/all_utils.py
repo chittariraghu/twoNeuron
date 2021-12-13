@@ -77,4 +77,3 @@ def save_plot(df, file_name, model):
     plotPath = os.path.join(plot_dir, file_name)  # model/filename
     plt.savefig(plotPath)
     logging.info(f"saving the plot at {plotPath}")
-    

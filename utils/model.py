@@ -1,6 +1,7 @@
 import numpy as np
-import logging
+import logging #Raghu : Added for logging
 from tqdm import tqdm
+#Replace "print" statements with "logging.df" to use logging module
 
 class Perceptron:
   def __init__(self, eta, epochs):

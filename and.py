@@ -1,11 +1,17 @@
 from utils.model import Perceptron
 from utils.all_utils import prepare_data, save_plot, save_model
 import pandas as pd
+import logging #Raghu : Added for logging
+
+logging_str="[%(asctime)s: %(levelname)s: %(module)s] %(message)s"  #Raghu : Added for logging
+logging.basicConfig(level=logging.INFO,format=logging_str)  #Raghu : Added for logging
 
 
 def main(data, modelName, plotName, eta, epochs):
     df = pd.DataFrame(data)
-    print(df)
+    #Replace "print" with "logging.df" to use logging module
+    #print(df)
+    logging.info(f"This is actual dataframe{df}")
     X, y = prepare_data(df)
     model = Perceptron(eta=eta, epochs=epochs)
     model.fit(X, y)
